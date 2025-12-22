@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "cover": "https://i.ibb.co.com/Kjp5VZhT/open-notebook-taking-note-concept-with-pen-wooden-blocks-gray-background-top-view-space-text-horizon.jpg",
+    "title": "The Future of AI in Everyday Life",
+    "author": "Jane Doe",
+    "author_img": "https://randomuser.me/api/portraits/women/44.jpg",
+    "posted_date": "2025-12-20",
+    "reading_time": 5,
+    "hashtags": ["#AI", "#Technology", "#Innovation"]
+  },
+  {
+    "id": 2,
+    "cover": "https://i.ibb.co.com/TxwCM9s0/social-media-business-concept-with-wooden-blocks-keyboard-glasses-pen-white-background-flat-lay.jpg",
+    "title": "10 Tips to Improve Your Productivity",
+    "author": "John Smith",
+    "author_img": "https://randomuser.me/api/portraits/men/32.jpg",
+    "posted_date": "2025-12-18",
+    "reading_time": 3,
+    "hashtags": ["#Productivity", "#SelfHelp", "#TimeManagement"]
+  },
+  {
+    "id": 3,
+    "cover": "https://i.ibb.co.com/ZphC1T3K/laptop-notebook-writing-from-view-wooden-background.jpg",
+    "title": "Understanding Blockchain in Simple Terms",
+    "author": "Alice Johnson",
+    "author_img": "https://randomuser.me/api/portraits/women/65.jpg",
+    "posted_date": "2025-12-15",
+    "reading_time": 6,
+    "hashtags": ["#Blockchain", "#Crypto", "#Technology"]
+  },
+  {
+    "id": 4,
+    "cover": "https://i.ibb.co.com/nN6PXytB/social-media-business-concept-with-wooden-blocks-notebook-glasses-pen-keyboard-white-background-flat.jpg",
+    "title": "Healthy Eating: Myths vs Facts",
+    "author": "Michael Lee",
+    "author_img": "https://randomuser.me/api/portraits/men/76.jpg",
+    "posted_date": "2025-12-12",
+    "reading_time": 4,
+    "hashtags": ["#Health", "#Nutrition", "#Wellness"]
+  },
+  {
+    "id": 5,
+    "cover": "https://i.ibb.co.com/jP2WVY9F/technology-communication-icons-symbols-concept.jpg",
+    "title": "The Art of Mindful Meditation",
+    "author": "Emma Davis",
+    "author_img": "https://randomuser.me/api/portraits/women/22.jpg",
+    "posted_date": "2025-12-10",
+    "reading_time": 7,
+    "hashtags": ["#Meditation", "#Mindfulness", "#SelfCare"]
+  }
+]
