@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Blog from "../Blog/Blog";
 
 const Blogs = () => {
   // hold all blogs data using useState
@@ -12,7 +13,9 @@ const Blogs = () => {
 
   return (
     <>
-      <div></div>
+      <div className="w-2/3 border-blue-600 border-2">
+        <h1>Blogs Length: {blogs.length}</h1>
+      </div>
     </>
   );
 };
