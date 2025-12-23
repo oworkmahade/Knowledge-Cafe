@@ -18,11 +18,19 @@ const Blog = ({ blog }) => {
       </div>
 
       <div className="authorReadTimeContainer border-red-600 border-2 md:flex md:flex-row justify-between items-center py-4">
-        <div className="authorContainer border-blue-600 border-2">
-          <h1>authorContainer</h1>
+        <div className="authorContainer border-blue-600 border-2 md:flex md:flex-row gap-4 items-center">
+          <div className="authorImage">
+            <img className="rounded-full w-16" src={author_img}></img>
+          </div>
+          <div className="authorContent">
+            <h1 className="authorName">{author}</h1>
+            <p className="postedDate">{posted_date}</p>
+          </div>
         </div>
+
         <div className="readTimeContainer border-green-600 border-2">
-          <h1>readTimeContainer</h1>
+          <p>{reading_time}</p>
+          {/* <img>Bookmark Logo</img> */}
         </div>
       </div>
     </div>
