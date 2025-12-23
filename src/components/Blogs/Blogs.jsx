@@ -13,8 +13,10 @@ const Blogs = () => {
 
   return (
     <>
-      <div className="w-2/3 border-blue-600 border-2">
-        <h1>Blogs Length: {blogs.length}</h1>
+      <div className="md:w-2/3 border-black border-2">
+        {blogs.map((blog) => (
+          <Blog blog={blog}></Blog>
+        ))}
       </div>
     </>
   );
