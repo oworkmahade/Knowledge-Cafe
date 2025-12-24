@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
+import { CiBookmark } from "react-icons/ci";
 
-const Blog = ({ blog }) => {
+const Blog = ({ blog, handleAddToBookmarks }) => {
   const {
     id,
     cover,
@@ -12,27 +13,45 @@ const Blog = ({ blog }) => {
     hashtags,
   } = blog;
   return (
-    <div className="blogContainer border-b-2 py-4">
+    <div className="blogContainer border-b-2 py-4 mb-8">
       <div>
-        <img className="rounded-xl" src={cover}></img>
+        <img
+          className="rounded-xl"
+          src={cover}
+          alt={`Cover  Picture of the title ${title}`}
+        ></img>
       </div>
 
-      <div className="authorReadTimeContainer border-red-600 border-2 md:flex md:flex-row justify-between items-center py-4">
-        <div className="authorContainer border-blue-600 border-2 md:flex md:flex-row gap-4 items-center">
+      <div className="authorReadTimeContainer md:flex md:flex-row justify-between items-center py-6">
+        <div className="authorContainer md:flex md:flex-row gap-4 items-center">
           <div className="authorImage">
-            <img className="rounded-full w-16" src={author_img}></img>
+            <img className="rounded-full w-16 h-16" src={author_img}></img>
           </div>
           <div className="authorContent">
-            <h1 className="authorName">{author}</h1>
+            <h1 className="authorName ">{author}</h1>
             <p className="postedDate">{posted_date}</p>
           </div>
         </div>
 
-        <div className="readTimeContainer border-green-600 border-2">
-          <p>{reading_time}</p>
-          {/* <img>Bookmark Logo</img> */}
+        <div className="readTimeBookMarkContainer md:flex md:flex-row gap-4">
+          <p>
+            {reading_time}
+            <span> min read</span>
+          </p>
+          <button onClick={() => handleAddToBookmarks(blog)}>
+            <CiBookmark />
+          </button>
         </div>
       </div>
+      <h1 className="text-3xl font-semibold py-4">{title}</h1>
+      <p>
+        {hashtags.map((hash, idx) => (
+          <span key={idx}>
+            {" "}
+            <a href=""> {hash}</a>
+          </span>
+        ))}
+      </p>
     </div>
   );
 };
