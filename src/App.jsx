@@ -3,11 +3,16 @@ import Header from "./components/Header/Header";
 import Blogs from "./components/Blogs/Blogs";
 import BookMarks from "./components/BookMarks/BookMarks";
 import { useEffect, useState } from "react";
-import { addToLSBookmarks, getStoredBookmarks } from "./utilities/localStorage";
+import {
+  addToLSBookmarks,
+  getStoredBookmarks,
+  addToLSReadingTime,
+} from "./utilities/localStorage";
 
 function App() {
   const [blogs, setBlogs] = useState([]);
   const [bookmarks, setBookmarks] = useState([]);
+  const [markAsRead, setMarkAsRead] = useState(0);
 
   const handleAddToBookmarks = (blog) => {
     const exists = bookmarks.find((bookmark) => bookmark.id === blog.id);
@@ -33,6 +38,12 @@ function App() {
     }
   }, [blogs]);
 
+  const handleMarkAsRead = (time) => {
+    const newReadingTime = markAsRead + time;
+    setMarkAsRead(newReadingTime);
+    addToLSReadingTime(newReadingTime);
+  };
+
   return (
     <>
       <Header></Header>
@@ -41,8 +52,9 @@ function App() {
           handleAddToBookmarks={handleAddToBookmarks}
           blogs={blogs}
           setBlogs={setBlogs}
+          handleMarkAsRead={handleMarkAsRead}
         ></Blogs>
-        <BookMarks bookmarks={bookmarks}></BookMarks>
+        <BookMarks bookmarks={bookmarks} markAsRead={markAsRead}></BookMarks>
       </div>
     </>
   );
