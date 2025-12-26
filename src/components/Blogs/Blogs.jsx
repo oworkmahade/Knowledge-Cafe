@@ -1,10 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Blog from "../Blog/Blog";
 
-const Blogs = ({ handleAddToBookmarks }) => {
-  // hold all blogs data using useState
-  const [blogs, setBlogs] = useState([]);
-  //load all blogs data using useEffect
+const Blogs = ({ handleAddToBookmarks, blogs, setBlogs }) => {
   useEffect(() => {
     fetch("blogs.json")
       .then((res) => res.json())
