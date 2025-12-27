@@ -7,12 +7,13 @@ import {
   addToLSBookmarks,
   getStoredBookmarks,
   addToLSReadingTime,
+  getStoredReadingTime,
 } from "./utilities/localStorage";
 
 function App() {
   const [blogs, setBlogs] = useState([]);
   const [bookmarks, setBookmarks] = useState([]);
-  const [markAsRead, setMarkAsRead] = useState(0);
+  const [readingTime, setReadingTime] = useState(0);
 
   const handleAddToBookmarks = (blog) => {
     const exists = bookmarks.find((bookmark) => bookmark.id === blog.id);
@@ -38,9 +39,15 @@ function App() {
     }
   }, [blogs]);
 
+  useEffect(() => {
+    const lsStoredReadingTime = getStoredReadingTime();
+    setReadingTime(lsStoredReadingTime);
+  }, []);
+
   const handleMarkAsRead = (time) => {
-    const newReadingTime = markAsRead + time;
-    setMarkAsRead(newReadingTime);
+    const newReadingTime = readingTime + Number(time);
+    setReadingTime(newReadingTime);
+    console.log(readingTime);
     addToLSReadingTime(newReadingTime);
   };
 
@@ -54,7 +61,7 @@ function App() {
           setBlogs={setBlogs}
           handleMarkAsRead={handleMarkAsRead}
         ></Blogs>
-        <BookMarks bookmarks={bookmarks} markAsRead={markAsRead}></BookMarks>
+        <BookMarks bookmarks={bookmarks} readingTime={readingTime}></BookMarks>
       </div>
     </>
   );
