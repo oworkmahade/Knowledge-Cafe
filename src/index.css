@@ -1,17 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* get exo 2 font from google fonts  */
 
 @import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   font-family: "Exo 2", sans-serif;
 }
-
-/* @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
-
-body {
-  font-family: "Dancing Script", cursive;
-} */

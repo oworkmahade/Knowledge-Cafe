@@ -35,15 +35,16 @@ const saveReadingTimeToLS = (newReadingTime) => {
 };
 
 //readingTime
-// const addToLSReadingTime = (newReadingTime) => {
-//   const readingTime = getStoredReadingTime();
-//   readingTime.push(newReadingTime);
-//   saveReadingTimeToLS(readingTime);
-// };
-
-//readingTime
 const addToLSReadingTime = (newReadingTime) => {
   saveReadingTimeToLS(newReadingTime);
+};
+
+// bookmark
+
+const removeBookMarkIdFroLs = (id) => {
+  const bookmark = getStoredBookmarks();
+  const remaining = bookmark.filter((idx) => idx !== id);
+  saveToLS(remaining);
 };
 
 export {
@@ -51,4 +52,5 @@ export {
   addToLSBookmarks,
   addToLSReadingTime,
   getStoredReadingTime,
+  removeBookMarkIdFroLs,
 };

@@ -8,6 +8,7 @@ import {
   getStoredBookmarks,
   addToLSReadingTime,
   getStoredReadingTime,
+  removeBookMarkIdFroLs,
 } from "./utilities/localStorage";
 
 function App() {
@@ -39,16 +40,22 @@ function App() {
     }
   }, [blogs]);
 
+  const removeBookMark = (id) => {
+    const remainingBookMark = bookmarks.filter((blog) => blog.id !== id);
+    setBookmarks(remainingBookMark);
+  };
+
   useEffect(() => {
     const lsStoredReadingTime = getStoredReadingTime();
     setReadingTime(lsStoredReadingTime);
   }, []);
 
-  const handleMarkAsRead = (time) => {
+  const handleMarkAsRead = (time, blog) => {
     const newReadingTime = readingTime + Number(time);
     setReadingTime(newReadingTime);
-    console.log(readingTime);
     addToLSReadingTime(newReadingTime);
+    removeBookMarkIdFroLs(blog.id);
+    removeBookMark(blog.id);
   };
 
   return (
